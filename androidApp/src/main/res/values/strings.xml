@@ -1,0 +1,9 @@
+<resources>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="greeting">Bienvenue</string>
+    <string name="name_input_label">Saisir votre nom</string>
+    <string name="birthyear_input_label">Saisir votre année de naissance</string>
+    <string name="no_name_error_message">Veuillez entrer un nom !</string>
+    <string name="validate_button_label">Valider</string>
+    <string name="title_activity_2">Activity2</string>
+</resources>
