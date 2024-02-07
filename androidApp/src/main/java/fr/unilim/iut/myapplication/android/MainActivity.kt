@@ -7,7 +7,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,13 +22,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import fr.unilim.iut.myapplication.Greeting
 
-const val NAME = "name"
-const val AGE = "age"
+const val PARAMS = "name_and_age"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,12 +77,8 @@ class MainActivity : ComponentActivity() {
             if(name.isEmpty()) {
                 Toast.makeText(this, resources.getString(R.string.no_name_error_message), Toast.LENGTH_SHORT).show()
             }else{
-                val ageCalculator = AgeCalculator()
-                val age = ageCalculator.computeAge(birthyear)
-
                 val activity2Intent = Intent(this, Activity2::class.java)
-                activity2Intent.putExtra(NAME, name)
-                activity2Intent.putExtra(AGE, age)
+                activity2Intent.putExtra(PARAMS, "$name;$birthyear")
 
                 startActivity(activity2Intent)
             }
